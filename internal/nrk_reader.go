@@ -19,6 +19,7 @@ type Item struct {
 	Title string `xml:"title"`
 	Link string `xml:"link"`
 	Description string `xml:"description"`
+	Date string `xml:"pubDate"`
 }
 
 func NRK_Reader(res *http.Response) Feed {
