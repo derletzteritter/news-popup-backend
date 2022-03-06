@@ -18,6 +18,7 @@ func main() {
 func getNrkFeed(writer http.ResponseWriter , response *http.Request) {
 	writer.Header().Set("Content-Type", "application/json")
 	writer.Header().Set("Access-Control-Allow-Origin", "*")
+    writer.Header().Set("Access-Control-Allow-Headers", "*")
 
 	res, err := http.Get("https://www.nrk.no/nyheter/siste.rss")
 	if err != nil {
