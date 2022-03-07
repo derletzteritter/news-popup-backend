@@ -1,4 +1,4 @@
-package internal
+package main
 
 import (
 	"encoding/xml"
@@ -22,7 +22,7 @@ type Item struct {
 	Date string `xml:"pubDate"`
 }
 
-func NRK_Reader(res *http.Response) Feed {
+func NrkReader(res *http.Response) Feed {
 	defer res.Body.Close()
 
 	b, err := io.ReadAll(res.Body)

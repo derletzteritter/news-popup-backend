@@ -4,7 +4,6 @@ import (
 	"encoding/xml"
 	"fmt"
 	xml2json "github.com/basgys/goxml2json"
-	"itschip/news-popup-backend/internal"
 	"net/http"
 	"strings"
 )
@@ -25,7 +24,7 @@ func getNrkFeed(writer http.ResponseWriter , response *http.Request) {
 		fmt.Println(err.Error())
 	}
 
-	xmlFeed := internal.NRK_Reader(res)
+	xmlFeed := NrkReader(res)
 	b, err := xml.Marshal(&xmlFeed)
 	if err != nil {
 		fmt.Println(err.Error())
