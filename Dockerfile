@@ -9,4 +9,6 @@ RUN go mod download
 
 COPY . .
 
+RUN go build
+
 CMD ["/news-popup-backend"]
